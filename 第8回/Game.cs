@@ -98,10 +98,10 @@ public sealed class Game : GameBase
 				float check_lat = check_dx[i] * calcRate;
 				float check_lng = check_dy[i] * calcRate;
 
-				if( player_lat - check_lat > -calcRate/2 && 
-					player_lat - check_lat <  calcRate/2 &&
-					player_lng - check_lng > -calcRate/2 &&
-					player_lng - check_lng <  calcRate/2
+				if( player_lat - check_lat > - calcRate/2 && 
+					player_lat - check_lat < calcRate/2 &&
+					player_lng - check_lng > - calcRate/2 &&
+					player_lng - check_lng < calcRate/2
 				) {
 					isCheck [i] = true;
 				}
@@ -146,17 +146,17 @@ public sealed class Game : GameBase
 			//ゲーム中の処理
 
 			//描画の例（ゲーム中）
-			gc.DrawString("PLAYING",320, 60);
-			gc.DrawString ("SCORE"+playcount,320, 90);
-			gc.DrawString ("lat:" + player_lat/calcRate,320, 120);
-			gc.DrawString ("lng:" + player_lng/calcRate,320, 150);
+			gc.DrawString("PLAYING", 320, 60);
+			gc.DrawString ("SCORE" + playcount, 320, 90);
+			gc.DrawString ("lat:" + player_lat/calcRate, 320, 120);
+			gc.DrawString ("lng:" + player_lng/calcRate, 320, 150);
 
 			for( int i = 0;i < CHECK_NUM; i++){
 				if(isCheck[i]){
-					gc.DrawString("o",400+check_dx[i]*30,250+check_dy[i]*30 );
+					gc.DrawString("o", 400 + check_dx[i] * 30, 250 + check_dy[i] * 30);
 				}
 				else {
-					gc.DrawString("x",400+check_dx[i]*30,250+check_dy[i]*30 );
+					gc.DrawString("x", 400 + check_dx[i] * 30, 250 + check_dy[i] * 30);
 				}
 			}
 
